@@ -1,34 +1,36 @@
-<script>
-  
-/**
- * @function _guid
- * @description Creates GUID for user based on several different browser variables
- * It will never be RFC4122 compliant but it is robust
- * @returns {Number}
- * @private
- */
-var guid = function() {
-
-    var nav = window.navigator;
-    var screen = window.screen;
-    var guid = nav.mimeTypes.length;
-    guid += nav.userAgent.replace(/\D+/g, '');
-    guid += nav.plugins.length;
-    guid += screen.height || '';
-    guid += screen.width || '';
-    guid += screen.pixelDepth || '';
-
-    return guid;
-};
-  
-  var sGUID = guid();
-  document.write(sGUID);
-  
-  set fso = CreateObject("Scripting.FileSystemObject");
-  set s=fso.CreateTextFile("Data.txt",true);
-  s.writeline("AAAA");
-  s.writeline(sGUID);
-  s.Close();
-  
-  document.write(sGUID);
-</script>
+<html>
+    <head>
+        <title>我的网页</title>
+        <script type ="text/javascript" src="./js/jquery.js"></script>
+        <script type ="text/javascript" src="./js/swfobject-2.2.min.js"></script>
+        <script type ="text/javascript" src="./js/evercookie.js"></script>
+    </head>
+    <body>
+        <button id="open">点我</button>
+        <script type ="text/javascript">
+        $(document).ready(function(){
+            $("#open").bind("click",function(){
+                var ec = new evercookie();
+                debugger;
+                ec.set("id","12345");
+                // ec.get("id",function(value){
+                //     alert("cookid is "+ value);
+                // });
+                ec.get("id", getCookie);
+            });
+ 
+            function getCookie(best_candidate, all_candidates)
+            {
+                alert("The retrieved cookie is: " + best_candidate + "\n" +
+                    "You can see what each storage mechanism returned " +
+                    "by looping through the all_candidates object.");
+ 
+                for (var item in all_candidates)
+                    document.write("Storage mechanism " + item +
+                        " returned: " + all_candidates[item] + "<br>");
+            }
+            
+        });
+        </script>
+    </body>
+</html>
