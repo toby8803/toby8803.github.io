@@ -2,6 +2,7 @@ aaabbb
 <script>
  var Sys = {};
         var ua = navigator.userAgent.toLowerCase();
+        alert(ua);
         var s;
         (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
         (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
@@ -9,13 +10,14 @@ aaabbb
         (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
         (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
 
-        document.write(s);
+       
  
-        //if (Sys.ie) document.write('IE: ' + Sys.ie);
-        //if (Sys.firefox) document.write('Firefox: ' + Sys.firefox);
-        //if (Sys.chrome) document.write('Chrome: ' + Sys.chrome);
-        //if (Sys.opera) document.write('Opera: ' + Sys.opera);
-        //if (Sys.safari) document.write('Safari: ' + Sys.safari);
+        if (Sys.ie) s = Sys.ie;
+        if (Sys.firefox) s = Sys.firefox;
+        if (Sys.chrome) s = Sys.chrome);
+        if (Sys.opera) s = Sys.opera;
+        if (Sys.safari) s = Sys.safari;
   
+        document.write(s);
   //location.href = 'https://www.appsheet.com/start/52a7be42-beb9-42e0-9106-e299031b5cb4'
 </script>
