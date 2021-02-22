@@ -14,6 +14,7 @@
                 debugger;
                 //ec.set("id","12345");
                 ec.get("id",function(value){
+                    if (value == "") ec.set("id","12345xxx");
                      alert("cookid is "+ value);
                       document.write(value);
                  });
