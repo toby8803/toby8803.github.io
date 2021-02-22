@@ -12,10 +12,12 @@
             $("#open").bind("click",function(){
                 var ec = new evercookie();
                 debugger;
-                ec.set("id","12345");
+                //ec.set("id","12345");
                 ec.get("id",function(value){
                      alert("cookid is "+ value);
+                      document.write(value);
                  });
+                return;
                 ec.get("id", getCookie);
             });
  
