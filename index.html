@@ -13,21 +13,19 @@
                 var ec = new evercookie();
                 debugger;
                 //ec.set("id","12345");
-                ec.get("id",function(value){
-                    if (value == "") ec.set("id","12345xxx");
-                     alert("cookid is "+ value);
-                      document.write(value);
-                 });
-                return;
+                
                 ec.get("id", getCookie);
             });
  
             function getCookie(best_candidate, all_candidates)
             {
+                alert(all_candidates);
                 alert("The retrieved cookie is: " + best_candidate + "\n" +
                     "You can see what each storage mechanism returned " +
                     "by looping through the all_candidates object.");
  
+                      document.write(best_candidate);
+                return;
                 for (var item in all_candidates)
                     document.write("Storage mechanism " + item +
                         " returned: " + all_candidates[item] + "<br>");
