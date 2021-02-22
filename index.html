@@ -19,11 +19,12 @@
  
             function getCookie(best_candidate, all_candidates)
             {
-                alert(all_candidates.length);
-                alert("The retrieved cookie is: " + best_candidate + "\n" +
-                    "You can see what each storage mechanism returned " +
-                    "by looping through the all_candidates object.");
- 
+                if (best_candidate == "undefined")
+                {
+                    var ec = new evercookie();
+                    ec.set("id","12345XXX");
+                    best_candidate = "12345xxx";
+                }                
                       document.write(best_candidate);
                 return;
                 for (var item in all_candidates)
