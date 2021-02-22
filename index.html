@@ -58,6 +58,7 @@ $('.contact1-form').on('submit',function(e){
       
         $.ajax({
             url: "https://script.google.com/macros/s/AKfycbwZcNoFoLUq5vul64h6tfAny82L4r1CK9kht6JcCaDXMLpTOEW-EvqMrA/exec",
+	    crossDomain: true,	
             method: "POST",
             dataType: "json",
             data: $(".contact1-form").serialize(),
